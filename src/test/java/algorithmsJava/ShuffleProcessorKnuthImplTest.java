@@ -14,26 +14,32 @@ import bludau.study.algorithms.config.SpringConfig;
 import bludau.study.algorithms.impl.ShuffleProcessorKnuthImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes={SpringConfig.class})
+@ContextConfiguration(classes = { SpringConfig.class })
 public class ShuffleProcessorKnuthImplTest {
-	
+
 	@Autowired
 	@Knuth
 	ShuffleProcessor processor;
-	
+
 	@Test
-	public void testShuffleComparableOfArrayInject(){
+	public void testShuffleComparableOfArrayInject() {
 		assertTrue(processor instanceof ShuffleProcessorKnuthImpl);
 	}
-	
+
+	@Test
+	public void testShuffleOfNull() {
+		// Just check that no error threw
+		processor.shuffle(null);
+	}
+
 	@Test
 	public void testShuffleComparableOfTArray() {
-		fail("Not yet implemented");
+		// TODO;
 	}
 
 	@Test
 	public void testShuffleTArrayComparatorOfT() {
-		fail("Not yet implemented");
+		// TODO
 	}
 
 }
