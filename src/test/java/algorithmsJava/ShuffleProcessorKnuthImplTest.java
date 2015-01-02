@@ -31,6 +31,11 @@ public class ShuffleProcessorKnuthImplTest {
 		// Just check that no error threw
 		processor.shuffle(null);
 	}
+	
+	@Test
+	public void testShuffleOfEmpty(){
+		
+	}
 
 	@Test
 	public void testShuffleComparableOfTArray() {

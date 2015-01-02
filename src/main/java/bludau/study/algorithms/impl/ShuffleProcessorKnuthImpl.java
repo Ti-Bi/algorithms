@@ -11,13 +11,13 @@ import bludau.study.algorithms.api.qualifier.Knuth;
 @Knuth
 public class ShuffleProcessorKnuthImpl implements ShuffleProcessor {
 
-	public <T> void shuffle(Comparable<T>[] inputArray) {
-
+	public <T> T[] shuffle(Comparable<T>[] inputArray) {
+		return null;
 	}
 
-	public <T> void shuffle(T[] inputArray, Comparator<T> comparator) {
+	public <T> T[] shuffle(T[] inputArray, Comparator<T> comparator) {
 		// TODO Auto-generated method stub
-
+		return null;
 	}
 
 }

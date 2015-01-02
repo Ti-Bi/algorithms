@@ -14,22 +14,38 @@ public interface ShuffleProcessor {
 	 * Shuffle an array of objects which implements the {@link Comparable}
 	 * interface.
 	 * <p>
-	 * <font color='red'><b>The original array is changed.</b></font>
+	 * The original array isn't changed.
 	 * </p>
 	 * 
 	 * @param inputArray
 	 *            array for sorting
+	 * @return <dl>
+	 *         <dt>sorted array</dt>
+	 *         <dd></dd>
+	 *         <dt>empty array</td>
+	 *         <dd>if source array is empty</dd>
+	 *         <dt><code>null</code></dt>
+	 *         <dd>if source array is null</dd>
+	 *         </dl>
 	 */
-	<T> void shuffle(Comparable<T>[] inputArray);
+	<T> T[] shuffle(Comparable<T>[] inputArray);
 
 	/**
 	 * Shuffle an array of objects with provided comporator.
 	 * <p>
-	 * <font color='red'><b>The original array is changed.</b></font>
+	 * The original array isn't changed.
 	 * </p>
 	 * 
 	 * @param inputArray
 	 *            array for sorting
+	 * @return <dl>
+	 *         <dt>sorted array</dt>
+	 *         <dd></dd>
+	 *         <dt>empty array</td>
+	 *         <dd>if source array is empty</dd>
+	 *         <dt><code>null</code></dt>
+	 *         <dd>if source array is null</dd>
+	 *         </dl>
 	 */
-	<T> void shuffle(T[] inputArray, Comparator<T> comparator);
+	<T> T[] shuffle(T[] inputArray, Comparator<T> comparator);
 }
