@@ -1,4 +1,4 @@
-package bludau.study.algorithms.api.utils;
+package bludau.study.algorithms.api.util;
 
 /**
  * Helper for work with array elements.

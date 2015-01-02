@@ -1,6 +1,6 @@
 package bludau.study.algorithms.impl.utils;
 
-import bludau.study.algorithms.api.utils.ArrayElementUtils;
+import bludau.study.algorithms.api.util.ArrayElementUtils;
 
 public class ArrayElementUtilsImpl implements ArrayElementUtils {
 
