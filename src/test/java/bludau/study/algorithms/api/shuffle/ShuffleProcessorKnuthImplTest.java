@@ -1,10 +1,9 @@
 package bludau.study.algorithms.api.shuffle;
 
-import static org.junit.Assert.*;
-
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,9 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.sun.javafx.collections.SourceAdapterChange;
-
 import bludau.study.algorithms.api.shuffle.qualifier.Knuth;
+import bludau.study.algorithms.api.util.ArrayElementUtils;
 import bludau.study.algorithms.config.SpringConfig;
 import bludau.study.algorithms.impl.ShuffleProcessorKnuthImpl;
 
@@ -24,7 +22,10 @@ public class ShuffleProcessorKnuthImplTest {
 
 	@Autowired
 	@Knuth
-	ShuffleProcessor processor;
+	private ShuffleProcessor processor;
+	
+	@Autowired
+	private ArrayElementUtils arrayUtils;
 
 	@Test
 	public void testShuffleComparableOfArrayInject() {
@@ -61,9 +62,8 @@ public class ShuffleProcessorKnuthImplTest {
 	@Test
 	public void testArrayConsistevity(){
 		Integer[] sourceArray = new Integer[]{1, 2, 3, 4, 5};
-		Set<Integer> sourceArrayElements = new HashSet<>(Arrays.asList(sourceArray));
 		Integer[] resultArray = processor.shuffle(sourceArray);
-		//TODO add implementation
-//		Set<Integer> resultArrayElements = new ?
+		
+		assertTrue(arrayUtils.isArraysHasSameElements(sourceArray, resultArray));
 	}
 }
