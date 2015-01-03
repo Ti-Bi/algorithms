@@ -1,18 +1,19 @@
 package bludau.study.algorithms.api.sorting;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.ObjectUtils.Null;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
 import bludau.study.algorithms.api.sorting.qualifier.SelectionSortQualifier;
 import bludau.study.algorithms.config.SpringConfig;
@@ -78,5 +79,13 @@ public class SortingProcessorSelectionImplTest {
 	public void testSortSimpleCase(){
 		Integer[] resultArray = selectionSortProcessor.sort(simpleArrayForSorting);
 		assertArrayEquals(sortedSimpleArray, resultArray);
+	}
+	
+	/**
+	 * Check that method trows the {@link NullPointerException} if source array is {@code null}.
+	 */
+	@Test(expected=NullPointerException.class)   
+	public void testSortNullThrows(){
+		selectionSortProcessor.sort(null);
 	}
 }
