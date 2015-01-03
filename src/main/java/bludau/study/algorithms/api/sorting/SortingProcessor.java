@@ -16,7 +16,7 @@ public interface SortingProcessor {
 	 *            the input array
 	 * @return sorted array (the same object with input array)
 	 */
-	<T extends Comparable<T>> T[] sort(T inputArray);
+	<T extends Comparable<T>> T[] sort(T[] inputArray);
 
 	/**
 	 * Sorts the input array using {@link Comparator}. The original array is

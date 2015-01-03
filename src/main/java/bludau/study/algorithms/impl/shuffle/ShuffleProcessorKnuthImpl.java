@@ -1,4 +1,4 @@
-package bludau.study.algorithms.impl;
+package bludau.study.algorithms.impl.shuffle;
 
 import java.util.Random;
 

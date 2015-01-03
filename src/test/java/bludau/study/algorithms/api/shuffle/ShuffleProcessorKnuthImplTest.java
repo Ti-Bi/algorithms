@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import bludau.study.algorithms.api.shuffle.qualifier.Knuth;
 import bludau.study.algorithms.api.util.ArrayElementUtils;
 import bludau.study.algorithms.config.SpringConfig;
-import bludau.study.algorithms.impl.ShuffleProcessorKnuthImpl;
+import bludau.study.algorithms.impl.shuffle.ShuffleProcessorKnuthImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { SpringConfig.class })
