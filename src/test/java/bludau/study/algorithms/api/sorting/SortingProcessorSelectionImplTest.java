@@ -35,4 +35,15 @@ public class SortingProcessorSelectionImplTest {
 		Integer[] result = selectionSortProcessor.sort(emptyArray);
 		assertTrue(ArrayUtils.isEmpty(result));
 	}
+	
+	/**
+	 * Check that result of sorting an array with single element it's equals array.
+	 */
+	@Test
+	public void testSortWithOneElementArray(){
+		Integer[] singleElementArray = new Integer[]{3};
+		Integer[] sourceArray = ArrayUtils.clone(singleElementArray);
+		Integer[] resultArray = selectionSortProcessor.sort(sourceArray);
+		assertArrayEquals(singleElementArray, resultArray);
+	}
 }
