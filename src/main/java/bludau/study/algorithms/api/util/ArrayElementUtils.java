@@ -28,5 +28,26 @@ public interface ArrayElementUtils {
 	 *         </dl>
 	 */
 	<T> T[] swap(T[] array, int firstElementIndex, int secondElementIndex);
-	
+
+	/**
+	 * Checks is two arrays has the same document. The method doesn't care about
+	 * elements order.
+	 * 
+	 * @param firstArray
+	 *            first array
+	 * @param secondArray
+	 *            second array
+	 * @return <dl>
+	 *         <dt><code>true</code></dt>
+	 *         <dd>if the arrays has same elements</dd>
+	 *         <dt><code>false</code></dt>
+	 *         <dd>if the arrays has different elements</dd>
+	 *         </dl>
+	 *         
+	 * @throws <dl>
+	 *         <dt>{@link NullPointerException}</dt>
+	 *         <dd>if the input array is <code>null</code></dd>
+	 *         </dl>
+	 */
+	<T> boolean isArraysHasSameElements(T[] firstArray, T[] secondArray);
 }

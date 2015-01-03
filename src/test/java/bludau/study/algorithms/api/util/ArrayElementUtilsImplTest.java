@@ -48,4 +48,28 @@ public class ArrayElementUtilsImplTest {
 		Integer[] resultArray = utils.swap(inputArray, 2, 3);
 		assertSame(resultArray, inputArray);
 	}
+	
+	@Test
+	public void testIsArraysHasSameElements(){
+		Integer[] secondArray = new Integer[]{3, 2, 1, 5, 4};
+		
+		assertTrue(utils.isArraysHasSameElements(inputArray, secondArray));
+	}
+	
+	@Test
+	public void testIsArraysHasSameElementsFalse(){
+		Integer[] firstArray = new Integer[]{1, 2, 3, 5, 6};
+
+		assertFalse(utils.isArraysHasSameElements(firstArray, inputArray));
+	}
+	
+	@Test(expected=NullPointerException.class)
+	public void testIsArraysHasSameElementsFirstNullElement(){
+		utils.isArraysHasSameElements(null, inputArray);
+	}
+
+	@Test(expected=NullPointerException.class)
+	public void testIsArraysHasSameElementsSecondNullElement(){
+		utils.isArraysHasSameElements(inputArray, null);
+	}
 }
