@@ -46,4 +46,14 @@ public class SortingProcessorSelectionImplTest {
 		Integer[] resultArray = selectionSortProcessor.sort(sourceArray);
 		assertArrayEquals(singleElementArray, resultArray);
 	}
+	
+	/**
+	 * Check that method return the same array.
+	 */
+	@Test
+	public void testSortForReturnValueIsTheSameElement(){
+		Integer[] sourceArray = new Integer[]{1, 2, 3};
+		Integer[] resultArray = selectionSortProcessor.sort(sourceArray);
+		assertSame(sourceArray, resultArray);
+	}
 }

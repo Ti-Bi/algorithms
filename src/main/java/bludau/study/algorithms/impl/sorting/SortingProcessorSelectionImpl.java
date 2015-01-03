@@ -30,9 +30,7 @@ public class SortingProcessorSelectionImpl implements SortingProcessor {
 	 */
 	@Override
 	public <T extends Comparable<T>> T[] sort(T[] inputArray) {
-		return sortArray(inputArray, (x, y) -> {
-			return x.compareTo(y);
-		});
+		return sortArray(inputArray, (x, y) -> x.compareTo(y));
 	}
 
 	/**
@@ -62,7 +60,7 @@ public class SortingProcessorSelectionImpl implements SortingProcessor {
 			int currentMinPosition = i;
 			
 			// looking for a minimum element
-			for (int j = i + 1; j < inputArray.length; i++) {
+			for (int j = i + 1; j < inputArray.length; j++) {
 				if (compareFunction.apply(currentMin, inputArray[j]) > 0) {
 					currentMin = inputArray[j];
 					currentMinPosition = j;
