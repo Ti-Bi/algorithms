@@ -15,8 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
-
 import bludau.study.algorithms.api.sorting.qualifier.SelectionSortQualifier;
 import bludau.study.algorithms.config.SpringConfig;
 import bludau.study.algorithms.impl.sorting.SortingProcessorSelectionImpl;
