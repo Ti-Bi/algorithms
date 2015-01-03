@@ -1,7 +1,6 @@
 package bludau.study.algorithms.impl.sorting;
 
 import java.util.Comparator;
-import java.util.function.BiFunction;
 
 import bludau.study.algorithms.api.sorting.SortingProcessor;
 
@@ -33,5 +32,5 @@ abstract class SortingProcessorAbstract implements SortingProcessor {
 	 * @return sorted array (the same object with inputArray)
 	 */
 	abstract protected <T> T[] sortArray(T[] inputArray,
-			BiFunction<T, T, Integer> compareFunction);
+			Comparator<T> compareFunction);
 }

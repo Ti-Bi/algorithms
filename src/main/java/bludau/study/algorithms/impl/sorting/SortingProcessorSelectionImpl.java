@@ -1,6 +1,6 @@
 package bludau.study.algorithms.impl.sorting;
 
-import java.util.function.BiFunction;
+import java.util.Comparator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -28,14 +28,14 @@ public class SortingProcessorSelectionImpl extends SortingProcessorAbstract {
 	 * <p>The Selection sort algorithm is used for this implementation.</p>
 	 */
 	protected <T> T[] sortArray(T[] inputArray,
-			BiFunction<T, T, Integer> compareFunction) {
+			Comparator<T> comparator) {
 		for (int i = 0; i < inputArray.length; i++) {
 			T currentMin = inputArray[i];
 			int currentMinPosition = i;
 			
 			// looking for a minimum element
 			for (int j = i + 1; j < inputArray.length; j++) {
-				if (compareFunction.apply(currentMin, inputArray[j]) > 0) {
+				if (comparator.compare(currentMin,  inputArray[j]) > 0) {
 					currentMin = inputArray[j];
 					currentMinPosition = j;
 				}
