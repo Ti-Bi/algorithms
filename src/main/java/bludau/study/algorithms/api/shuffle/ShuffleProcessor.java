@@ -1,7 +1,5 @@
 package bludau.study.algorithms.api.shuffle;
 
-import java.util.Comparator;
-
 /**
  * The class represents a processor for shuffling an array.
  * 
@@ -11,10 +9,9 @@ import java.util.Comparator;
 public interface ShuffleProcessor {
 
 	/**
-	 * Shuffle an array of objects which implements the {@link Comparable}
-	 * interface.
+	 * Shuffle an array of objects.
 	 * <p>
-	 * The original array isn't changed.
+	 * The original array is changed.
 	 * </p>
 	 * 
 	 * @param inputArray
@@ -28,10 +25,10 @@ public interface ShuffleProcessor {
 	 *         <dd>if source array is null</dd>
 	 *         </dl>
 	 */
-	<T> Comparable<T>[] shuffle(Comparable<T>[] inputArray);
+	<T> T[] shuffle(T[] inputArray);
 
 	/**
-	 * Shuffle an array of objects with provided comporator.
+	 * Creates copy of input array and shuffle that copy.
 	 * <p>
 	 * The original array isn't changed.
 	 * </p>
@@ -47,5 +44,5 @@ public interface ShuffleProcessor {
 	 *         <dd>if source array is null</dd>
 	 *         </dl>
 	 */
-	<T> Comparable<T>[] shuffle(T[] inputArray, Comparator<T> comparator);
+	<T> T[] cloneAndShuffle(T[] inputArray);
 }

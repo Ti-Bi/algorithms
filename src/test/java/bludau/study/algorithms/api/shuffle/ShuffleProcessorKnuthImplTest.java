@@ -1,13 +1,18 @@
 package bludau.study.algorithms.api.shuffle;
 
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.sun.javafx.collections.SourceAdapterChange;
 
 import bludau.study.algorithms.api.shuffle.qualifier.Knuth;
 import bludau.study.algorithms.config.SpringConfig;
@@ -34,19 +39,31 @@ public class ShuffleProcessorKnuthImplTest {
 	
 	@Test
 	public void testShuffleOfEmpty(){
-		@SuppressWarnings("unchecked")
-		Comparable<Integer>[] emptyArray = new Comparable[0];
+		Integer[] emptyArray = new Integer[0];
 		assertTrue(processor.shuffle(emptyArray).length == 0);
 	}
-
+	
 	@Test
-	public void testShuffleComparableOfTArray() {
-		// TODO;
+	public void testShuffleOfOneElement(){
+		Integer[] oneElementArray = new Integer[]{1};
+		
+		Integer[] result = processor.shuffle(oneElementArray);
+		assertArrayEquals(oneElementArray, result);
 	}
-
+	
 	@Test
-	public void testShuffleTArrayComparatorOfT() {
-		// TODO
+	public void testShuffleArrayLength(){
+		Integer[] sourceArray = new Integer[]{1, 2, 3, 4, 5};
+		Integer[] resultArray = processor.shuffle(sourceArray);
+		assertEquals(sourceArray.length, resultArray.length);
 	}
-
+	
+	@Test
+	public void testArrayConsistevity(){
+		Integer[] sourceArray = new Integer[]{1, 2, 3, 4, 5};
+		Set<Integer> sourceArrayElements = new HashSet<>(Arrays.asList(sourceArray));
+		Integer[] resultArray = processor.shuffle(sourceArray);
+		//TODO add implementation
+//		Set<Integer> resultArrayElements = new ?
+	}
 }
