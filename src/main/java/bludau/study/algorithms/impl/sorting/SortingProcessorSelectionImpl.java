@@ -1,6 +1,5 @@
 package bludau.study.algorithms.impl.sorting;
 
-import java.util.Comparator;
 import java.util.function.BiFunction;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,7 @@ import bludau.study.algorithms.api.util.ArrayElementUtils;
  */
 @Component
 @SelectionSortQualifier
-public class SortingProcessorSelectionImpl implements SortingProcessor {
+public class SortingProcessorSelectionImpl extends SortingProcessorAbstract {
 
 	@Autowired
 	private ArrayElementUtils arrayElementUtils;
@@ -26,34 +25,9 @@ public class SortingProcessorSelectionImpl implements SortingProcessor {
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * <p>Implementation using the selection sort algorithm.</p>
+	 * <p>The Selection sort algorithm is used for this implementation.</p>
 	 */
-	@Override
-	public <T extends Comparable<T>> T[] sort(T[] inputArray) {
-		return sortArray(inputArray, (x, y) -> x.compareTo(y));
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * <p>Implementation using the selection sort algorithm.</p>
-	 */
-	@Override
-	public <T> T[] sort(final T[] inputArray, final Comparator<T> comparator) {
-		return sortArray(inputArray, (x, y) -> comparator.compare(x, y));
-	}
-
-	/**
-	 * The implementation of the selection sort algorithm. The source array is
-	 * modified.
-	 * 
-	 * @param inputArray
-	 *            the array for sorting
-	 * @param compareFunction
-	 *            function for compare elements
-	 * @return sorted array (the same object with inputArray)
-	 */
-	private <T> T[] sortArray(T[] inputArray,
+	protected <T> T[] sortArray(T[] inputArray,
 			BiFunction<T, T, Integer> compareFunction) {
 		for (int i = 0; i < inputArray.length; i++) {
 			T currentMin = inputArray[i];
