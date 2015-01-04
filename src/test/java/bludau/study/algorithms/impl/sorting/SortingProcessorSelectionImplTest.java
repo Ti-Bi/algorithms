@@ -1,4 +1,4 @@
-package bludau.study.algorithms.api.sorting;
+package bludau.study.algorithms.impl.sorting;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertSame;
@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import bludau.study.algorithms.api.sorting.SortingProcessor;
 import bludau.study.algorithms.api.sorting.qualifier.SelectionSortQualifier;
 import bludau.study.algorithms.config.SpringConfig;
 import bludau.study.algorithms.impl.sorting.SortingProcessorSelectionImpl;

@@ -1,4 +1,4 @@
-package bludau.study.algorithms.api.util;
+package bludau.study.algorithms.impl.util;
 
 import static org.junit.Assert.*;
 
@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import bludau.study.algorithms.api.util.ArrayElementUtils;
 import bludau.study.algorithms.config.SpringConfig;
 
 @RunWith(SpringJUnit4ClassRunner.class)
