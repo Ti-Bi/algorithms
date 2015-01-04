@@ -1,5 +1,7 @@
 package bludau.study.algorithms.impl.math;
 
+import static org.junit.Assert.*;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -26,4 +28,28 @@ public class EuclidGreatestCommonDivisorImplTest {
 	@Autowired
 	@EuclidGreatestCommonDivisorQualifier
 	private GreatestCommonDivisor gcdFinder;
+	
+	@Test
+	public void testFindGCDSimpleCase(){
+		int res = gcdFinder.findGCD(10, 15);
+		assertEquals(5, res);
+	}
+	
+	@Test
+	public void testFindGCDNonDivisorCase(){
+		int res = gcdFinder.findGCD(11, 13);
+		assertEquals(1, res);
+	}
+	
+	@Test
+	public void testFindGCDZeroCase(){
+		int res = gcdFinder.findGCD(1, 0);
+		assertEquals(1, res);
+	}
+	
+	@Test
+	public void testFindGCDMinusCawe(){
+		int res = gcdFinder.findGCD(-1, -2);
+		assertEquals(-1, res);
+	}
 }
