@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
  */
 @Qualifier("bludau.study.algorithms.api.sorting.qualifier.SelectionSortQualifier")
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ ElementType.TYPE, ElementType.FIELD })
+@Target({ ElementType.TYPE, ElementType.FIELD, ElementType.METHOD })
 public @interface SelectionSortQualifier {
 
 }

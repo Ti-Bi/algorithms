@@ -10,32 +10,35 @@ import java.util.Comparator;
 import org.apache.commons.lang3.ArrayUtils;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import bludau.study.algorithms.api.sorting.SortingProcessor;
-import bludau.study.algorithms.api.sorting.qualifier.SelectionSortQualifier;
-import bludau.study.algorithms.config.SpringConfig;
-import bludau.study.algorithms.impl.sorting.SortingProcessorSelectionImpl;
 
 /**
- * The test class for the {@link SortingProcessorSelectionImpl} class.
+ * The abstract test class for the {@link SortingProcessor} class.
  * 
  * @author Anatol Bludau
  *
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { SpringConfig.class })
-public class SortingProcessorSelectionImplTest {
+public abstract class SortingProcessorAbstractImplTest {
 
-	@Autowired
-	@SelectionSortQualifier
-	private SortingProcessor selectionSortProcessor;
+	/**
+	 * The field for sorting processor.
+	 */
+	protected SortingProcessor sortingProcessor;
 
+	/**
+	 * Simple instance of array for testing.
+	 */
 	private Integer[] simpleArrayForSorting;
+
+	/**
+	 * Sorted version of simple instance of array for testing.
+	 */
 	private Integer[] sortedSimpleArray;
+
+	/**
+	 * Comparator function for the comparable types.
+	 */
 	private Comparator<Integer> comparator = (x, y) -> x.compareTo(y);
 
 	@Before
@@ -51,7 +54,7 @@ public class SortingProcessorSelectionImplTest {
 	@Test
 	public void testSortWithEmptyArray() {
 		Integer[] emptyArray = new Integer[] {};
-		Integer[] result = selectionSortProcessor.sort(emptyArray);
+		Integer[] result = sortingProcessor.sort(emptyArray);
 		assertTrue(ArrayUtils.isEmpty(result));
 	}
 
@@ -63,7 +66,7 @@ public class SortingProcessorSelectionImplTest {
 	public void testSortWithOneElementArray() {
 		Integer[] singleElementArray = new Integer[] { 3 };
 		Integer[] sourceArray = ArrayUtils.clone(singleElementArray);
-		Integer[] resultArray = selectionSortProcessor.sort(sourceArray);
+		Integer[] resultArray = sortingProcessor.sort(sourceArray);
 		assertArrayEquals(singleElementArray, resultArray);
 	}
 
@@ -72,8 +75,7 @@ public class SortingProcessorSelectionImplTest {
 	 */
 	@Test
 	public void testSortForReturnValueIsTheSameElement() {
-		Integer[] resultArray = selectionSortProcessor
-				.sort(simpleArrayForSorting);
+		Integer[] resultArray = sortingProcessor.sort(simpleArrayForSorting);
 		assertSame(simpleArrayForSorting, resultArray);
 	}
 
@@ -82,8 +84,7 @@ public class SortingProcessorSelectionImplTest {
 	 */
 	@Test
 	public void testSortSimpleCase() {
-		Integer[] resultArray = selectionSortProcessor
-				.sort(simpleArrayForSorting);
+		Integer[] resultArray = sortingProcessor.sort(simpleArrayForSorting);
 		assertArrayEquals(sortedSimpleArray, resultArray);
 	}
 
@@ -93,7 +94,7 @@ public class SortingProcessorSelectionImplTest {
 	 */
 	@Test(expected = NullPointerException.class)
 	public void testSortNullThrows() {
-		selectionSortProcessor.sort(null);
+		sortingProcessor.sort(null);
 	}
 
 	/**
@@ -102,7 +103,7 @@ public class SortingProcessorSelectionImplTest {
 	@Test
 	public void testSortComparatorWithEmptyArray() {
 		Integer[] emptyArray = new Integer[] {};
-		Integer[] result = selectionSortProcessor.sort(emptyArray, comparator);
+		Integer[] result = sortingProcessor.sort(emptyArray, comparator);
 		assertTrue(ArrayUtils.isEmpty(result));
 	}
 
@@ -114,8 +115,7 @@ public class SortingProcessorSelectionImplTest {
 	public void testSortComparatorWithOneElementArray() {
 		Integer[] singleElementArray = new Integer[] { 3 };
 		Integer[] sourceArray = ArrayUtils.clone(singleElementArray);
-		Integer[] resultArray = selectionSortProcessor.sort(sourceArray,
-				comparator);
+		Integer[] resultArray = sortingProcessor.sort(sourceArray, comparator);
 		assertArrayEquals(singleElementArray, resultArray);
 	}
 
@@ -124,8 +124,8 @@ public class SortingProcessorSelectionImplTest {
 	 */
 	@Test
 	public void testSortComparatorForReturnValueIsTheSameElement() {
-		Integer[] resultArray = selectionSortProcessor.sort(
-				simpleArrayForSorting, comparator);
+		Integer[] resultArray = sortingProcessor.sort(simpleArrayForSorting,
+				comparator);
 		assertSame(simpleArrayForSorting, resultArray);
 	}
 
@@ -134,8 +134,8 @@ public class SortingProcessorSelectionImplTest {
 	 */
 	@Test
 	public void testSortComparatorSimpleCase() {
-		Integer[] resultArray = selectionSortProcessor.sort(
-				simpleArrayForSorting, comparator);
+		Integer[] resultArray = sortingProcessor.sort(simpleArrayForSorting,
+				comparator);
 		assertArrayEquals(sortedSimpleArray, resultArray);
 	}
 
@@ -145,7 +145,7 @@ public class SortingProcessorSelectionImplTest {
 	 */
 	@Test(expected = NullPointerException.class)
 	public void testSortComparatorNullThrows() {
-		selectionSortProcessor.sort(null, comparator);
+		sortingProcessor.sort(null, comparator);
 	}
 
 	/**
@@ -155,8 +155,8 @@ public class SortingProcessorSelectionImplTest {
 	public void testSortComparatorReverse() {
 		Integer[] expectedResult = ArrayUtils.clone(sortedSimpleArray);
 		ArrayUtils.reverse(expectedResult);
-		Integer[] actualResult = selectionSortProcessor.sort(
-				simpleArrayForSorting, (x, y) -> y.compareTo(x));
+		Integer[] actualResult = sortingProcessor.sort(simpleArrayForSorting, (
+				x, y) -> y.compareTo(x));
 		assertArrayEquals(expectedResult, actualResult);
 	}
 }
