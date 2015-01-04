@@ -8,14 +8,14 @@ import java.lang.annotation.Target;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 /**
- * Qualifier annotation for the selection sort.
+ * Qualifier annotation for insertion sort.
  * 
  * @author Anatol Bludau
  *
  */
-@Qualifier("bludau.study.algorithms.api.sorting.qualifier.SelectionSortQualifier")
+@Qualifier("bludau.study.algorithms.api.sorting.qualifier.InsertionSortQualifier")
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.TYPE, ElementType.FIELD })
-public @interface SelectionSortQualifier {
+public @interface InsertionSortQualifier {
 
 }
