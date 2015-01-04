@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import bludau.study.algorithms.api.math.EuclidGreatestCommonDivisorQualifier;
 import bludau.study.algorithms.api.math.GreatestCommonDivisor;
+import bludau.study.algorithms.api.math.qualifier.EuclidGreatestCommonDivisorQualifier;
 import bludau.study.algorithms.config.SpringConfig;
 
 /**

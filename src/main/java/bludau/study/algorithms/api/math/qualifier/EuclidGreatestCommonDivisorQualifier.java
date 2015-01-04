@@ -1,4 +1,4 @@
-package bludau.study.algorithms.api.math;
+package bludau.study.algorithms.api.math.qualifier;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
