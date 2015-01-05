@@ -9,7 +9,12 @@ package bludau.study.algorithms.api.search;
 public interface SearchProcessor {
 
 	/**
+	 * <p>
 	 * Find the specified element in the array.
+	 * </p>
+	 * <p>
+	 * Equality is checked with aim of {@link Object#equals(Object)} method.
+	 * </p>
 	 * 
 	 * @param array
 	 *            the array for finding element
