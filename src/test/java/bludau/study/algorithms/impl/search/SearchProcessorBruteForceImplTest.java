@@ -6,11 +6,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import bludau.study.algorithms.api.search.SearchProcessor;
-import bludau.study.algorithms.api.search.qualifier.BrutForceSearchQualifier;
+import bludau.study.algorithms.api.search.qualifier.BruteForceSearchQualifier;
 import bludau.study.algorithms.config.SpringConfig;
 
 /**
- * Unit test for the {@link SearchProcessorBrutForceImpl} class.
+ * Unit test for the {@link SearchProcessorBruteForceImpl} class.
  * 
  * @author Anatol Bludau
  *
@@ -21,7 +21,7 @@ public class SearchProcessorBruteForceImplTest extends
 		SearchProcessorAbstractTest {
 
 	@Autowired
-	@BrutForceSearchQualifier
+	@BruteForceSearchQualifier
 	private void setSearchProcessor(SearchProcessor searchProcessor) {
 		this.searchProcessor = searchProcessor;
 	}

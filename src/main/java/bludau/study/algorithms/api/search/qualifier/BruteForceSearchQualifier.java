@@ -16,6 +16,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 @Qualifier("bludau.study.algorithms.api.search.qualifier.BinarySearchQualifier")
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.TYPE, ElementType.FIELD, ElementType.METHOD })
-public @interface BrutForceSearchQualifier {
+public @interface BruteForceSearchQualifier {
 
 }

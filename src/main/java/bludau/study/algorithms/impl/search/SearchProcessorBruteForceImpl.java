@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import bludau.study.algorithms.api.search.SearchProcessor;
-import bludau.study.algorithms.api.search.qualifier.BrutForceSearchQualifier;
+import bludau.study.algorithms.api.search.qualifier.BruteForceSearchQualifier;
 
 /**
  * The implementation of brut force search algorithm.
@@ -15,8 +15,8 @@ import bludau.study.algorithms.api.search.qualifier.BrutForceSearchQualifier;
  *
  */
 @Component
-@BrutForceSearchQualifier
-public class SearchProcessorBrutForceImpl implements SearchProcessor {
+@BruteForceSearchQualifier
+public class SearchProcessorBruteForceImpl implements SearchProcessor {
 
 	@Value("${config.sorting.notfound.index}")
 	private int indexNotFoundCode;
