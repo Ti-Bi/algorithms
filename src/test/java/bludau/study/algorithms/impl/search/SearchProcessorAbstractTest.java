@@ -46,4 +46,14 @@ public abstract class SearchProcessorAbstractTest {
 		int res = searchProcessor.find(simpleArrayForTest, 6);
 		assertEquals(5, res);
 	}
+
+	@Test(expected = NullPointerException.class)
+	public void testFindNullPointerExceptionAtNullArray() {
+		searchProcessor.find(null, 4);
+	}
+
+	@Test(expected = NullPointerException.class)
+	public void testFindNullPointerExceptionAtNullElement() {
+		searchProcessor.find(simpleArrayForTest, null);
+	}
 }
