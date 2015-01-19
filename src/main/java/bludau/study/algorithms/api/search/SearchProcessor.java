@@ -21,6 +21,7 @@ public interface SearchProcessor {
 	 * @param element
 	 *            target element
 	 * @return index of target element in array or {@code -1} if it is not found
+	 * @throws NullPointerException when one of input parameters is {@code null}
 	 */
 	<T> int find(T[] array, T element);
 }

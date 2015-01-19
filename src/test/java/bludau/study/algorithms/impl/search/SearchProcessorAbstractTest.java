@@ -40,4 +40,10 @@ public abstract class SearchProcessorAbstractTest {
 		int res = searchProcessor.find(simpleArrayForTest, 11);
 		assertEquals(-1, res);
 	}
+
+	@Test
+	public void testFindSimpleCase() {
+		int res = searchProcessor.find(simpleArrayForTest, 6);
+		assertEquals(5, res);
+	}
 }
