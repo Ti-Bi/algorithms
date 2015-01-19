@@ -20,15 +20,12 @@ public class SearchProcessorBruteForceImpl implements SearchProcessor {
 
 	@Value("${config.sorting.notfound.index}")
 	private int indexNotFoundCode;
-	
+
 	/**
 	 * {@inheritDoc}
 	 * <p>
 	 * The brute force implementation of the search.
 	 * </p>
-	 * 
-	 * @throws NullPointerException
-	 *             if the input array or element is {@code null}
 	 */
 	@Override
 	public <T> int find(T[] array, T element) {
@@ -36,11 +33,11 @@ public class SearchProcessorBruteForceImpl implements SearchProcessor {
 		Objects.requireNonNull(element);
 
 		for (int i = 0; i < array.length; i++) {
-			if (array[i].equals(element)){
+			if (array[i].equals(element)) {
 				return i;
 			}
 		}
-		
+
 		return indexNotFoundCode;
 	}
 }
